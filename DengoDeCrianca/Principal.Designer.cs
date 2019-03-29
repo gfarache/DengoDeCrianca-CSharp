@@ -35,11 +35,11 @@
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orçamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orcamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerarOrçamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.históricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,10 +48,10 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.criançaToolStripMenuItem,
-            this.orçamentoToolStripMenuItem,
-            this.relatórioToolStripMenuItem,
-            this.históricoToolStripMenuItem,
-            this.relatóriosToolStripMenuItem});
+            this.orcamentoToolStripMenuItem,
+            this.relatorioToolStripMenuItem,
+            this.historicoToolStripMenuItem,
+            this.financeiroToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(691, 25);
@@ -98,13 +98,13 @@
             this.excluirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.excluirToolStripMenuItem.Text = "Excluir";
             // 
-            // orçamentoToolStripMenuItem
+            // orcamentoToolStripMenuItem
             // 
-            this.orçamentoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.orcamentoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gerarOrçamentoToolStripMenuItem});
-            this.orçamentoToolStripMenuItem.Name = "orçamentoToolStripMenuItem";
-            this.orçamentoToolStripMenuItem.Size = new System.Drawing.Size(88, 21);
-            this.orçamentoToolStripMenuItem.Text = "Orçamento";
+            this.orcamentoToolStripMenuItem.Name = "orcamentoToolStripMenuItem";
+            this.orcamentoToolStripMenuItem.Size = new System.Drawing.Size(88, 21);
+            this.orcamentoToolStripMenuItem.Text = "Orçamento";
             // 
             // gerarOrçamentoToolStripMenuItem
             // 
@@ -113,23 +113,23 @@
             this.gerarOrçamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gerarOrçamentoToolStripMenuItem.Text = "Gerar Orçamento";
             // 
-            // relatórioToolStripMenuItem
+            // relatorioToolStripMenuItem
             // 
-            this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
-            this.relatórioToolStripMenuItem.Text = "Relatório";
+            this.relatorioToolStripMenuItem.Name = "relatorioToolStripMenuItem";
+            this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
+            this.relatorioToolStripMenuItem.Text = "Relatório";
             // 
-            // históricoToolStripMenuItem
+            // historicoToolStripMenuItem
             // 
-            this.históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
-            this.históricoToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
-            this.históricoToolStripMenuItem.Text = "Histórico";
+            this.historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
+            this.historicoToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
+            this.historicoToolStripMenuItem.Text = "Histórico";
             // 
-            // relatóriosToolStripMenuItem
+            // financeiroToolStripMenuItem
             // 
-            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
-            this.relatóriosToolStripMenuItem.Text = "Financeiro";
+            this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
+            this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
+            this.financeiroToolStripMenuItem.Text = "Financeiro";
             // 
             // Principal
             // 
@@ -157,12 +157,12 @@
         private System.Windows.Forms.ToolStripMenuItem criançaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem financeiroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatorioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem históricoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem orçamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historicoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orcamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gerarOrçamentoToolStripMenuItem;
     }
 }
