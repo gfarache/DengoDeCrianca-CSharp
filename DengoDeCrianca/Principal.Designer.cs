@@ -79,7 +79,7 @@
             // 
             this.adicionarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
-            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.adicionarToolStripMenuItem.Text = "Adicionar";
             this.adicionarToolStripMenuItem.Click += new System.EventHandler(this.adicionarToolStripMenuItem_Click);
             // 
@@ -87,21 +87,21 @@
             // 
             this.editarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
             // excluirToolStripMenuItem
             // 
             this.excluirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.excluirToolStripMenuItem.Text = "Excluir";
             // 
             // financeiroToolStripMenuItem
@@ -121,6 +121,7 @@
             this.adicionarToolStripMenuItem1.Name = "adicionarToolStripMenuItem1";
             this.adicionarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.adicionarToolStripMenuItem1.Text = "Adicionar";
+            this.adicionarToolStripMenuItem1.Click += new System.EventHandler(this.adicionarToolStripMenuItem1_Click);
             // 
             // editarToolStripMenuItem1
             // 
@@ -155,7 +156,7 @@
             // 
             this.gerarOrçamentoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gerarOrçamentoToolStripMenuItem.Name = "gerarOrçamentoToolStripMenuItem";
-            this.gerarOrçamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gerarOrçamentoToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.gerarOrçamentoToolStripMenuItem.Text = "Gerar Orçamento";
             // 
             // relatórioToolStripMenuItem

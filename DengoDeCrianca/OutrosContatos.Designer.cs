@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OutrosContatos));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
+            this.txtRGResponsavel = new System.Windows.Forms.TextBox();
+            this.txtCPFResponsavel = new System.Windows.Forms.MaskedTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtParentescoResponsavel = new System.Windows.Forms.TextBox();
+            this.txtTelefoneResponsavel = new System.Windows.Forms.MaskedTextBox();
+            this.txtNomeResponsável = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,19 +45,29 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtEnderecoResponsavel = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNumeroCasaResponsavel = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtCEPResponsavel = new System.Windows.Forms.MaskedTextBox();
+            this.txtBairroResponsavel = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.maskedTextBox6);
+            this.groupBox3.Controls.Add(this.txtRGResponsavel);
+            this.groupBox3.Controls.Add(this.txtCPFResponsavel);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.maskedTextBox3);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.txtParentescoResponsavel);
+            this.groupBox3.Controls.Add(this.txtTelefoneResponsavel);
+            this.groupBox3.Controls.Add(this.txtNomeResponsável);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Location = new System.Drawing.Point(12, 52);
@@ -67,20 +77,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Outros Contatos";
             // 
-            // textBox9
+            // txtRGResponsavel
             // 
-            this.textBox9.Location = new System.Drawing.Point(118, 88);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(103, 20);
-            this.textBox9.TabIndex = 39;
+            this.txtRGResponsavel.Location = new System.Drawing.Point(118, 88);
+            this.txtRGResponsavel.Name = "txtRGResponsavel";
+            this.txtRGResponsavel.Size = new System.Drawing.Size(103, 20);
+            this.txtRGResponsavel.TabIndex = 39;
             // 
-            // maskedTextBox6
+            // txtCPFResponsavel
             // 
-            this.maskedTextBox6.Location = new System.Drawing.Point(12, 88);
-            this.maskedTextBox6.Mask = "###.###.###-##";
-            this.maskedTextBox6.Name = "maskedTextBox6";
-            this.maskedTextBox6.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox6.TabIndex = 38;
+            this.txtCPFResponsavel.Location = new System.Drawing.Point(12, 88);
+            this.txtCPFResponsavel.Mask = "###.###.###-##";
+            this.txtCPFResponsavel.Name = "txtCPFResponsavel";
+            this.txtCPFResponsavel.Size = new System.Drawing.Size(100, 20);
+            this.txtCPFResponsavel.TabIndex = 38;
             // 
             // label15
             // 
@@ -109,27 +119,27 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Parentesco:";
             // 
-            // textBox5
+            // txtParentescoResponsavel
             // 
-            this.textBox5.Location = new System.Drawing.Point(11, 127);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(129, 20);
-            this.textBox5.TabIndex = 14;
+            this.txtParentescoResponsavel.Location = new System.Drawing.Point(11, 127);
+            this.txtParentescoResponsavel.Name = "txtParentescoResponsavel";
+            this.txtParentescoResponsavel.Size = new System.Drawing.Size(129, 20);
+            this.txtParentescoResponsavel.TabIndex = 14;
             // 
-            // maskedTextBox3
+            // txtTelefoneResponsavel
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(227, 88);
-            this.maskedTextBox3.Mask = "(99) 00000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox3.TabIndex = 13;
+            this.txtTelefoneResponsavel.Location = new System.Drawing.Point(227, 88);
+            this.txtTelefoneResponsavel.Mask = "(99) 00000-0000";
+            this.txtTelefoneResponsavel.Name = "txtTelefoneResponsavel";
+            this.txtTelefoneResponsavel.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefoneResponsavel.TabIndex = 13;
             // 
-            // textBox4
+            // txtNomeResponsável
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 49);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(285, 20);
-            this.textBox4.TabIndex = 1;
+            this.txtNomeResponsável.Location = new System.Drawing.Point(12, 49);
+            this.txtNomeResponsável.Name = "txtNomeResponsável";
+            this.txtNomeResponsável.Size = new System.Drawing.Size(285, 20);
+            this.txtNomeResponsável.TabIndex = 1;
             // 
             // label8
             // 
@@ -168,7 +178,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(301, 248);
+            this.btnCancelar.Location = new System.Drawing.Point(298, 332);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 19;
@@ -177,7 +187,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(183, 248);
+            this.btnLimpar.Location = new System.Drawing.Point(180, 332);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 18;
@@ -186,18 +196,101 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(65, 248);
+            this.btnSalvar.Location = new System.Drawing.Point(62, 332);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 17;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtEnderecoResponsavel);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtNumeroCasaResponsavel);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.txtCEPResponsavel);
+            this.groupBox1.Controls.Add(this.txtBairroResponsavel);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Location = new System.Drawing.Point(12, 226);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(423, 100);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Localidade";
+            // 
+            // txtEnderecoResponsavel
+            // 
+            this.txtEnderecoResponsavel.Location = new System.Drawing.Point(6, 30);
+            this.txtEnderecoResponsavel.Name = "txtEnderecoResponsavel";
+            this.txtEnderecoResponsavel.Size = new System.Drawing.Size(315, 20);
+            this.txtEnderecoResponsavel.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Endereço:";
+            // 
+            // txtNumeroCasaResponsavel
+            // 
+            this.txtNumeroCasaResponsavel.Location = new System.Drawing.Point(327, 30);
+            this.txtNumeroCasaResponsavel.Name = "txtNumeroCasaResponsavel";
+            this.txtNumeroCasaResponsavel.Size = new System.Drawing.Size(50, 20);
+            this.txtNumeroCasaResponsavel.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(327, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(22, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Nº:";
+            // 
+            // txtCEPResponsavel
+            // 
+            this.txtCEPResponsavel.Location = new System.Drawing.Point(150, 69);
+            this.txtCEPResponsavel.Mask = "00000-999";
+            this.txtCEPResponsavel.Name = "txtCEPResponsavel";
+            this.txtCEPResponsavel.Size = new System.Drawing.Size(64, 20);
+            this.txtCEPResponsavel.TabIndex = 19;
+            // 
+            // txtBairroResponsavel
+            // 
+            this.txtBairroResponsavel.Location = new System.Drawing.Point(6, 69);
+            this.txtBairroResponsavel.Name = "txtBairroResponsavel";
+            this.txtBairroResponsavel.Size = new System.Drawing.Size(139, 20);
+            this.txtBairroResponsavel.TabIndex = 17;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(150, 53);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 13);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "CEP:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 53);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Bairro:";
+            // 
             // OutrosContatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 293);
+            this.ClientSize = new System.Drawing.Size(467, 371);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSalvar);
@@ -209,6 +302,8 @@
             this.Text = "Adicionar responsáveis";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,19 +313,28 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtParentescoResponsavel;
+        private System.Windows.Forms.MaskedTextBox txtTelefoneResponsavel;
+        private System.Windows.Forms.TextBox txtNomeResponsável;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboCrianças;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
+        private System.Windows.Forms.TextBox txtRGResponsavel;
+        private System.Windows.Forms.MaskedTextBox txtCPFResponsavel;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtEnderecoResponsavel;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtNumeroCasaResponsavel;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.MaskedTextBox txtCEPResponsavel;
+        private System.Windows.Forms.TextBox txtBairroResponsavel;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
     }
 }
