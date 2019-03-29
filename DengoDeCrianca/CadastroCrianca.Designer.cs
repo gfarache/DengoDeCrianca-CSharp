@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroCrianca));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNomeCrianca = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupCrianca = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.comboCriancaTipoSanguineo = new System.Windows.Forms.ComboBox();
+            this.picCriancaFoto = new System.Windows.Forms.PictureBox();
+            this.dtpNascimentoCrianca = new System.Windows.Forms.DateTimePicker();
+            this.radioCriancaFem = new System.Windows.Forms.RadioButton();
+            this.radioCriancaMasc = new System.Windows.Forms.RadioButton();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupFiliacao = new System.Windows.Forms.GroupBox();
             this.btnDadosOpcionais = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupEndereco = new System.Windows.Forms.GroupBox();
             this.txtEnderecoPais = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtNumeroCasaPais = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.chkAtivarPai = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupMae = new System.Windows.Forms.GroupBox();
             this.chkAtivarMae = new System.Windows.Forms.CheckBox();
             this.txtCPFMae = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefoneMae = new System.Windows.Forms.MaskedTextBox();
@@ -64,7 +64,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNomeMae = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupPai = new System.Windows.Forms.GroupBox();
             this.txtRGPai = new System.Windows.Forms.TextBox();
             this.txtCPFPai = new System.Windows.Forms.MaskedTextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -73,12 +73,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNomePai = new System.Windows.Forms.TextBox();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.groupCadastro = new System.Windows.Forms.GroupBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.groupCrianca.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCriancaFoto)).BeginInit();
+            this.groupFiliacao.SuspendLayout();
+            this.groupEndereco.SuspendLayout();
+            this.groupMae.SuspendLayout();
+            this.groupPai.SuspendLayout();
+            this.groupCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -90,12 +93,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome Completo:";
             // 
-            // textBox1
+            // txtNomeCrianca
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(291, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNomeCrianca.Location = new System.Drawing.Point(6, 32);
+            this.txtNomeCrianca.Name = "txtNomeCrianca";
+            this.txtNomeCrianca.Size = new System.Drawing.Size(291, 20);
+            this.txtNomeCrianca.TabIndex = 1;
             // 
             // label2
             // 
@@ -106,23 +109,23 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Data de Nascimento:";
             // 
-            // groupBox2
+            // groupCrianca
             // 
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(16, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(444, 175);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Criança:";
+            this.groupCrianca.Controls.Add(this.label10);
+            this.groupCrianca.Controls.Add(this.comboCriancaTipoSanguineo);
+            this.groupCrianca.Controls.Add(this.picCriancaFoto);
+            this.groupCrianca.Controls.Add(this.dtpNascimentoCrianca);
+            this.groupCrianca.Controls.Add(this.radioCriancaFem);
+            this.groupCrianca.Controls.Add(this.radioCriancaMasc);
+            this.groupCrianca.Controls.Add(this.label1);
+            this.groupCrianca.Controls.Add(this.txtNomeCrianca);
+            this.groupCrianca.Controls.Add(this.label2);
+            this.groupCrianca.Location = new System.Drawing.Point(12, 19);
+            this.groupCrianca.Name = "groupCrianca";
+            this.groupCrianca.Size = new System.Drawing.Size(444, 175);
+            this.groupCrianca.TabIndex = 8;
+            this.groupCrianca.TabStop = false;
+            this.groupCrianca.Text = "Criança:";
             // 
             // label10
             // 
@@ -133,10 +136,10 @@
             this.label10.TabIndex = 12;
             this.label10.Text = "Tipo Sanguíneo:";
             // 
-            // comboBox1
+            // comboCriancaTipoSanguineo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboCriancaTipoSanguineo.FormattingEnabled = true;
+            this.comboCriancaTipoSanguineo.Items.AddRange(new object[] {
             "A+",
             "A-",
             "B+",
@@ -145,61 +148,63 @@
             "AB-",
             "O+",
             "O-"});
-            this.comboBox1.Location = new System.Drawing.Point(209, 78);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(87, 21);
-            this.comboBox1.TabIndex = 11;
+            this.comboCriancaTipoSanguineo.Location = new System.Drawing.Point(209, 78);
+            this.comboCriancaTipoSanguineo.Name = "comboCriancaTipoSanguineo";
+            this.comboCriancaTipoSanguineo.Size = new System.Drawing.Size(87, 21);
+            this.comboCriancaTipoSanguineo.TabIndex = 11;
             // 
-            // pictureBox1
+            // picCriancaFoto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(305, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 137);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.picCriancaFoto.Location = new System.Drawing.Point(317, 19);
+            this.picCriancaFoto.Name = "picCriancaFoto";
+            this.picCriancaFoto.Size = new System.Drawing.Size(111, 137);
+            this.picCriancaFoto.TabIndex = 10;
+            this.picCriancaFoto.TabStop = false;
+            this.picCriancaFoto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picCriancaFoto_MouseClick);
             // 
-            // dateTimePicker1
+            // dtpNascimentoCrianca
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(93, 80);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(95, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dtpNascimentoCrianca.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNascimentoCrianca.Location = new System.Drawing.Point(93, 80);
+            this.dtpNascimentoCrianca.Name = "dtpNascimentoCrianca";
+            this.dtpNascimentoCrianca.Size = new System.Drawing.Size(95, 20);
+            this.dtpNascimentoCrianca.TabIndex = 9;
             // 
-            // radioButton2
+            // radioCriancaFem
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(9, 82);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(67, 17);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Feminino";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioCriancaFem.AutoSize = true;
+            this.radioCriancaFem.Location = new System.Drawing.Point(9, 82);
+            this.radioCriancaFem.Name = "radioCriancaFem";
+            this.radioCriancaFem.Size = new System.Drawing.Size(67, 17);
+            this.radioCriancaFem.TabIndex = 8;
+            this.radioCriancaFem.TabStop = true;
+            this.radioCriancaFem.Text = "Feminino";
+            this.radioCriancaFem.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioCriancaMasc
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(9, 64);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 17);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Masculino";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioCriancaMasc.AutoSize = true;
+            this.radioCriancaMasc.Location = new System.Drawing.Point(9, 64);
+            this.radioCriancaMasc.Name = "radioCriancaMasc";
+            this.radioCriancaMasc.Size = new System.Drawing.Size(73, 17);
+            this.radioCriancaMasc.TabIndex = 7;
+            this.radioCriancaMasc.TabStop = true;
+            this.radioCriancaMasc.Text = "Masculino";
+            this.radioCriancaMasc.UseVisualStyleBackColor = true;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(109, 646);
+            this.btnSalvar.Location = new System.Drawing.Point(97, 653);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(191, 646);
+            this.btnLimpar.Location = new System.Drawing.Point(179, 653);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 10;
@@ -208,52 +213,53 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(273, 646);
+            this.btnCancelar.Location = new System.Drawing.Point(261, 653);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // groupFiliacao
             // 
-            this.groupBox1.Controls.Add(this.btnDadosOpcionais);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.chkAtivarPai);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Location = new System.Drawing.Point(16, 194);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(444, 446);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filiação";
+            this.groupFiliacao.Controls.Add(this.btnDadosOpcionais);
+            this.groupFiliacao.Controls.Add(this.groupEndereco);
+            this.groupFiliacao.Controls.Add(this.chkAtivarPai);
+            this.groupFiliacao.Controls.Add(this.groupMae);
+            this.groupFiliacao.Controls.Add(this.groupPai);
+            this.groupFiliacao.Location = new System.Drawing.Point(12, 200);
+            this.groupFiliacao.Name = "groupFiliacao";
+            this.groupFiliacao.Size = new System.Drawing.Size(444, 437);
+            this.groupFiliacao.TabIndex = 12;
+            this.groupFiliacao.TabStop = false;
+            this.groupFiliacao.Text = "Filiação";
             // 
             // btnDadosOpcionais
             // 
-            this.btnDadosOpcionais.Location = new System.Drawing.Point(175, 407);
+            this.btnDadosOpcionais.Location = new System.Drawing.Point(146, 406);
             this.btnDadosOpcionais.Name = "btnDadosOpcionais";
-            this.btnDadosOpcionais.Size = new System.Drawing.Size(105, 23);
+            this.btnDadosOpcionais.Size = new System.Drawing.Size(142, 23);
             this.btnDadosOpcionais.TabIndex = 16;
-            this.btnDadosOpcionais.Text = "Dados opcionais...";
+            this.btnDadosOpcionais.Text = "Adicionar responsáveis...";
             this.btnDadosOpcionais.UseVisualStyleBackColor = true;
+            this.btnDadosOpcionais.Click += new System.EventHandler(this.btnDadosOpcionais_Click);
             // 
-            // groupBox3
+            // groupEndereco
             // 
-            this.groupBox3.Controls.Add(this.txtEnderecoPais);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.txtNumeroCasaPais);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.txtCEPPais);
-            this.groupBox3.Controls.Add(this.txtBairroPais);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Location = new System.Drawing.Point(7, 301);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(423, 100);
-            this.groupBox3.TabIndex = 29;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Localidade";
+            this.groupEndereco.Controls.Add(this.txtEnderecoPais);
+            this.groupEndereco.Controls.Add(this.label11);
+            this.groupEndereco.Controls.Add(this.txtNumeroCasaPais);
+            this.groupEndereco.Controls.Add(this.label12);
+            this.groupEndereco.Controls.Add(this.txtCEPPais);
+            this.groupEndereco.Controls.Add(this.txtBairroPais);
+            this.groupEndereco.Controls.Add(this.label14);
+            this.groupEndereco.Controls.Add(this.label13);
+            this.groupEndereco.Location = new System.Drawing.Point(7, 301);
+            this.groupEndereco.Name = "groupEndereco";
+            this.groupEndereco.Size = new System.Drawing.Size(423, 100);
+            this.groupEndereco.TabIndex = 29;
+            this.groupEndereco.TabStop = false;
+            this.groupEndereco.Text = "Localidade";
             // 
             // txtEnderecoPais
             // 
@@ -329,24 +335,25 @@
             this.chkAtivarPai.TabIndex = 2;
             this.chkAtivarPai.Text = "Ativar";
             this.chkAtivarPai.UseVisualStyleBackColor = true;
+            this.chkAtivarPai.CheckedChanged += new System.EventHandler(this.chkAtivarPai_CheckedChanged);
             // 
-            // groupBox4
+            // groupMae
             // 
-            this.groupBox4.Controls.Add(this.chkAtivarMae);
-            this.groupBox4.Controls.Add(this.txtCPFMae);
-            this.groupBox4.Controls.Add(this.txtTelefoneMae);
-            this.groupBox4.Controls.Add(this.txtRGMae);
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.txtNomeMae);
-            this.groupBox4.Location = new System.Drawing.Point(7, 157);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(423, 138);
-            this.groupBox4.TabIndex = 27;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Dados da Mãe";
+            this.groupMae.Controls.Add(this.chkAtivarMae);
+            this.groupMae.Controls.Add(this.txtCPFMae);
+            this.groupMae.Controls.Add(this.txtTelefoneMae);
+            this.groupMae.Controls.Add(this.txtRGMae);
+            this.groupMae.Controls.Add(this.label3);
+            this.groupMae.Controls.Add(this.label4);
+            this.groupMae.Controls.Add(this.label6);
+            this.groupMae.Controls.Add(this.label5);
+            this.groupMae.Controls.Add(this.txtNomeMae);
+            this.groupMae.Location = new System.Drawing.Point(7, 157);
+            this.groupMae.Name = "groupMae";
+            this.groupMae.Size = new System.Drawing.Size(423, 138);
+            this.groupMae.TabIndex = 27;
+            this.groupMae.TabStop = false;
+            this.groupMae.Text = "Dados da Mãe";
             // 
             // chkAtivarMae
             // 
@@ -357,6 +364,7 @@
             this.chkAtivarMae.TabIndex = 7;
             this.chkAtivarMae.Text = "Ativar";
             this.chkAtivarMae.UseVisualStyleBackColor = true;
+            this.chkAtivarMae.CheckedChanged += new System.EventHandler(this.chkAtivarMae_CheckedChanged);
             // 
             // txtCPFMae
             // 
@@ -428,22 +436,22 @@
             this.txtNomeMae.Size = new System.Drawing.Size(315, 20);
             this.txtNomeMae.TabIndex = 8;
             // 
-            // groupBox5
+            // groupPai
             // 
-            this.groupBox5.Controls.Add(this.txtRGPai);
-            this.groupBox5.Controls.Add(this.txtCPFPai);
-            this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.txtTelefonePai);
-            this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Controls.Add(this.txtNomePai);
-            this.groupBox5.Location = new System.Drawing.Point(7, 43);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(423, 100);
-            this.groupBox5.TabIndex = 26;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Dados do Pai";
+            this.groupPai.Controls.Add(this.txtRGPai);
+            this.groupPai.Controls.Add(this.txtCPFPai);
+            this.groupPai.Controls.Add(this.label15);
+            this.groupPai.Controls.Add(this.label7);
+            this.groupPai.Controls.Add(this.txtTelefonePai);
+            this.groupPai.Controls.Add(this.label8);
+            this.groupPai.Controls.Add(this.label9);
+            this.groupPai.Controls.Add(this.txtNomePai);
+            this.groupPai.Location = new System.Drawing.Point(7, 43);
+            this.groupPai.Name = "groupPai";
+            this.groupPai.Size = new System.Drawing.Size(423, 100);
+            this.groupPai.TabIndex = 26;
+            this.groupPai.TabStop = false;
+            this.groupPai.Text = "Dados do Pai";
             // 
             // txtRGPai
             // 
@@ -515,30 +523,45 @@
             this.txtNomePai.Size = new System.Drawing.Size(315, 20);
             this.txtNomePai.TabIndex = 3;
             // 
+            // groupCadastro
+            // 
+            this.groupCadastro.Controls.Add(this.groupCrianca);
+            this.groupCadastro.Controls.Add(this.btnCancelar);
+            this.groupCadastro.Controls.Add(this.groupFiliacao);
+            this.groupCadastro.Controls.Add(this.btnLimpar);
+            this.groupCadastro.Controls.Add(this.btnSalvar);
+            this.groupCadastro.Location = new System.Drawing.Point(0, 12);
+            this.groupCadastro.Name = "groupCadastro";
+            this.groupCadastro.Size = new System.Drawing.Size(468, 684);
+            this.groupCadastro.TabIndex = 13;
+            this.groupCadastro.TabStop = false;
+            this.groupCadastro.Text = "Cadastro";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // CadastroCrianca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 685);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(479, 703);
+            this.Controls.Add(this.groupCadastro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroCrianca";
             this.Text = "Cadastrar Criança";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.groupCrianca.ResumeLayout(false);
+            this.groupCrianca.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCriancaFoto)).EndInit();
+            this.groupFiliacao.ResumeLayout(false);
+            this.groupFiliacao.PerformLayout();
+            this.groupEndereco.ResumeLayout(false);
+            this.groupEndereco.PerformLayout();
+            this.groupMae.ResumeLayout(false);
+            this.groupMae.PerformLayout();
+            this.groupPai.ResumeLayout(false);
+            this.groupPai.PerformLayout();
+            this.groupCadastro.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -546,21 +569,21 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNomeCrianca;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.GroupBox groupCrianca;
+        private System.Windows.Forms.DateTimePicker dtpNascimentoCrianca;
+        private System.Windows.Forms.RadioButton radioCriancaFem;
+        private System.Windows.Forms.RadioButton radioCriancaMasc;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picCriancaFoto;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboCriancaTipoSanguineo;
+        private System.Windows.Forms.GroupBox groupFiliacao;
         private System.Windows.Forms.Button btnDadosOpcionais;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupEndereco;
         private System.Windows.Forms.TextBox txtEnderecoPais;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNumeroCasaPais;
@@ -570,7 +593,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox chkAtivarPai;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupMae;
         private System.Windows.Forms.CheckBox chkAtivarMae;
         private System.Windows.Forms.MaskedTextBox txtCPFMae;
         private System.Windows.Forms.MaskedTextBox txtTelefoneMae;
@@ -580,7 +603,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNomeMae;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupPai;
         private System.Windows.Forms.TextBox txtRGPai;
         private System.Windows.Forms.MaskedTextBox txtCPFPai;
         private System.Windows.Forms.Label label15;
@@ -589,5 +612,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNomePai;
+        private System.Windows.Forms.GroupBox groupCadastro;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
