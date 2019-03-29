@@ -40,8 +40,6 @@
             this.txtNomeResponsável = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboCrianças = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -70,23 +68,23 @@
             this.groupBox3.Controls.Add(this.txtNomeResponsável);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(12, 52);
+            this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(415, 168);
+            this.groupBox3.Size = new System.Drawing.Size(394, 139);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Outros Contatos";
             // 
             // txtRGResponsavel
             // 
-            this.txtRGResponsavel.Location = new System.Drawing.Point(118, 88);
+            this.txtRGResponsavel.Location = new System.Drawing.Point(112, 71);
             this.txtRGResponsavel.Name = "txtRGResponsavel";
             this.txtRGResponsavel.Size = new System.Drawing.Size(103, 20);
             this.txtRGResponsavel.TabIndex = 39;
             // 
             // txtCPFResponsavel
             // 
-            this.txtCPFResponsavel.Location = new System.Drawing.Point(12, 88);
+            this.txtCPFResponsavel.Location = new System.Drawing.Point(6, 71);
             this.txtCPFResponsavel.Mask = "###.###.###-##";
             this.txtCPFResponsavel.Name = "txtCPFResponsavel";
             this.txtCPFResponsavel.Size = new System.Drawing.Size(100, 20);
@@ -95,7 +93,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(118, 72);
+            this.label15.Location = new System.Drawing.Point(112, 55);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(26, 13);
             this.label15.TabIndex = 37;
@@ -104,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 72);
+            this.label2.Location = new System.Drawing.Point(6, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 36;
@@ -113,7 +111,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 111);
+            this.label9.Location = new System.Drawing.Point(5, 94);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 13);
             this.label9.TabIndex = 15;
@@ -121,14 +119,14 @@
             // 
             // txtParentescoResponsavel
             // 
-            this.txtParentescoResponsavel.Location = new System.Drawing.Point(11, 127);
+            this.txtParentescoResponsavel.Location = new System.Drawing.Point(5, 110);
             this.txtParentescoResponsavel.Name = "txtParentescoResponsavel";
             this.txtParentescoResponsavel.Size = new System.Drawing.Size(129, 20);
             this.txtParentescoResponsavel.TabIndex = 14;
             // 
             // txtTelefoneResponsavel
             // 
-            this.txtTelefoneResponsavel.Location = new System.Drawing.Point(227, 88);
+            this.txtTelefoneResponsavel.Location = new System.Drawing.Point(221, 71);
             this.txtTelefoneResponsavel.Mask = "(99) 00000-0000";
             this.txtTelefoneResponsavel.Name = "txtTelefoneResponsavel";
             this.txtTelefoneResponsavel.Size = new System.Drawing.Size(100, 20);
@@ -136,7 +134,7 @@
             // 
             // txtNomeResponsável
             // 
-            this.txtNomeResponsável.Location = new System.Drawing.Point(12, 49);
+            this.txtNomeResponsável.Location = new System.Drawing.Point(6, 32);
             this.txtNomeResponsável.Name = "txtNomeResponsável";
             this.txtNomeResponsável.Size = new System.Drawing.Size(285, 20);
             this.txtNomeResponsável.TabIndex = 1;
@@ -144,7 +142,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(227, 72);
+            this.label8.Location = new System.Drawing.Point(221, 55);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 12;
@@ -153,32 +151,15 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 33);
+            this.label7.Location = new System.Drawing.Point(6, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nome Completo:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Nome da Criança:";
-            // 
-            // comboCrianças
-            // 
-            this.comboCrianças.FormattingEnabled = true;
-            this.comboCrianças.Location = new System.Drawing.Point(14, 25);
-            this.comboCrianças.Name = "comboCrianças";
-            this.comboCrianças.Size = new System.Drawing.Size(413, 21);
-            this.comboCrianças.TabIndex = 15;
-            // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(298, 332);
+            this.btnCancelar.Location = new System.Drawing.Point(292, 263);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 19;
@@ -187,7 +168,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(180, 332);
+            this.btnLimpar.Location = new System.Drawing.Point(174, 263);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 18;
@@ -196,12 +177,13 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(62, 332);
+            this.btnSalvar.Location = new System.Drawing.Point(56, 263);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 17;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // groupBox1
             // 
@@ -213,9 +195,9 @@
             this.groupBox1.Controls.Add(this.txtBairroResponsavel);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Location = new System.Drawing.Point(12, 226);
+            this.groupBox1.Location = new System.Drawing.Point(12, 157);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(423, 100);
+            this.groupBox1.Size = new System.Drawing.Size(394, 100);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Localidade";
@@ -289,13 +271,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 371);
+            this.ClientSize = new System.Drawing.Size(417, 295);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboCrianças);
             this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OutrosContatos";
@@ -305,7 +285,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -318,8 +297,6 @@
         private System.Windows.Forms.TextBox txtNomeResponsável;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboCrianças;
         private System.Windows.Forms.TextBox txtRGResponsavel;
         private System.Windows.Forms.MaskedTextBox txtCPFResponsavel;
         private System.Windows.Forms.Label label15;
