@@ -12,7 +12,6 @@ namespace DengoDeCrianca
 {
     public partial class CadastroCrianca : Form
     {
-        public static string teste = "";
         public CadastroCrianca()
         {
             InitializeComponent();
@@ -89,7 +88,7 @@ namespace DengoDeCrianca
                 if (chkAtivarPai.Checked && chkAtivarMae.Checked)
                 {
                     if ((txtNomePai.Text != "" && txtCPFPai.Text != "" && txtRGPai.Text != "" && txtTelefonePai.Text != "") &&
-                (txtNomeMae.Text != "" && txtCPFMae.Text != "" && txtRGMae.Text != "" && txtTelefoneMae.Text != ""))
+                        (txtNomeMae.Text != "" && txtCPFMae.Text != "" && txtRGMae.Text != "" && txtTelefoneMae.Text != ""))
                     {
                         //metodo salvar após verificar se campos obrigatórios dos pais estão preenchidos
                     }
@@ -101,8 +100,23 @@ namespace DengoDeCrianca
                     }
                 } else if (!chkAtivarPai.Checked && !chkAtivarMae.Checked)
                 {
-                    //metodo salvar após verificar se campos obrigatórios dos pais não estão preenchidos,
                     //verificar se o Form de outros contatos estão devidamente preenchidos.
+                    string nomeResponsavel = OutrosContatos.nomeCompleto;
+                    string cpf = OutrosContatos.cpf;
+                    string rg = OutrosContatos.rg;
+                    string telefone = OutrosContatos.telefone;
+                    string parentesco = OutrosContatos.parentesco;
+                    string endereco = OutrosContatos.endereco;
+                    string numero = OutrosContatos.numeroCasa;
+                    string bairro = OutrosContatos.bairro;
+                    string cep = OutrosContatos.cep;
+
+                    if (nomeResponsavel != "" && cpf != "" && rg != "" && telefone != "" &&
+                        parentesco != "" && endereco != "" && numero != "" && bairro != "" && cep != "")
+                    {
+                        //metodo salvar após verificar se campos obrigatórios dos pais não estão preenchidos e 
+                        //alguns dados do Form do responsável não está em branco
+                    }
                 }
             }
         }

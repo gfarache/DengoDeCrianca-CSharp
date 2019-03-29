@@ -42,6 +42,8 @@ namespace DengoDeCrianca
                 parentesco != "" && endereco != "" && numeroCasa != "" && bairro != "" && cep != "")
             {
                 //método para salvar nas váriaveis do Form de cadastro da criança
+                CadastroCrianca crianca = new CadastroCrianca();
+                crianca.Show();
 
             } else
             {
