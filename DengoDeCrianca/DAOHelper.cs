@@ -31,7 +31,8 @@ CREATE TABLE IF NOT EXISTS "Crianca" (
 	"IdCrianca"	INTEGER NOT NULL,
 	"Nome"	VARCHAR(100) NOT NULL,
 	"DataNascimento"	DATE NOT NULL,
-	"Sexo"	CHAR(1) NOT NULL,
+	"Sexo"	VARCHAR(5) NOT NULL,
+    "TipoSanguineo" VARCHAR(5),
 	PRIMARY KEY("IdCrianca")
 );
 DROP TABLE IF EXISTS "Mae";
