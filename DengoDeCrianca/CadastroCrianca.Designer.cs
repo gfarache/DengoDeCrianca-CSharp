@@ -180,6 +180,7 @@
             this.radioCriancaFem.TabStop = true;
             this.radioCriancaFem.Text = "Feminino";
             this.radioCriancaFem.UseVisualStyleBackColor = true;
+            this.radioCriancaFem.Click += new System.EventHandler(this.radioCriancaFem_Click);
             // 
             // radioCriancaMasc
             // 
@@ -191,6 +192,7 @@
             this.radioCriancaMasc.TabStop = true;
             this.radioCriancaMasc.Text = "Masculino";
             this.radioCriancaMasc.UseVisualStyleBackColor = true;
+            this.radioCriancaMasc.Click += new System.EventHandler(this.radioCriancaMasc_Click);
             // 
             // btnSalvar
             // 

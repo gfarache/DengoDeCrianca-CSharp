@@ -79,7 +79,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDConexao.cs" />
     <Compile Include="CadastroCrianca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +91,7 @@
     <Compile Include="CadastroResponsável.Designer.cs">
       <DependentUpon>CadastroResponsável.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAOHelper.cs" />
     <Compile Include="OutrosContatos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,15 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DengoMainDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DengoMainDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DengoMainDB.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
