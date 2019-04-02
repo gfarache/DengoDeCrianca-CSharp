@@ -18,7 +18,7 @@ namespace DengoDeCrianca
         //public int idOutrosContatos;
         public string nomeCrianca;
         public string dataNasc;
-        public char sexo;
+        public string sexo;
         public string tipoSanguineo;
         public string nomeMae;
         public string nomePai;
@@ -51,7 +51,39 @@ namespace DengoDeCrianca
             InitializeComponent();
         }
 
-        private void chkAtivarPai_CheckedChanged(object sender, EventArgs e)
+        private void LimparCamposForm()
+        {
+            txtNomeCrianca.Text = "";
+            radioCriancaFem.Checked = false;
+            radioCriancaMasc.Checked = false;
+            dtpNascimentoCrianca.Text = "";
+            comboCriancaTipoSanguineo.Text = "";
+            chkAtivarPai.Checked = false;
+            txtNomePai.Text = "";
+            txtCPFPai.Text = "";
+            txtRGPai.Text = "";
+            txtTelefonePai.Text = "";
+            chkAtivarMae.Checked = false;
+            txtNomeMae.Text = "";
+            txtCPFMae.Text = "";
+            txtRGMae.Text = "";
+            txtTelefoneMae.Text = "";
+            txtEnderecoPais.Text = "";
+            txtNumeroCasaPais.Text = "";
+            txtBairroPais.Text = "";
+            txtCEPPais.Text = "";
+        }
+
+        private void LimparCamposCrianca()
+        {
+            txtNomeCrianca.Text = "";
+            radioCriancaFem.Checked = false;
+            radioCriancaMasc.Checked = false;
+            dtpNascimentoCrianca.Text = "";
+            comboCriancaTipoSanguineo.Text = "";
+        }
+
+            private void chkAtivarPai_CheckedChanged(object sender, EventArgs e)
         {
             if (chkAtivarPai.Checked)
             {
@@ -117,70 +149,74 @@ namespace DengoDeCrianca
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(txtNomeCrianca.Text != "" && (radioCriancaFem.Checked || radioCriancaMasc.Checked) && dtpNascimentoCrianca.Text != "")
+            if (txtNomeCrianca.Text != "" && (radioCriancaFem.Checked || radioCriancaMasc.Checked) && dtpNascimentoCrianca.Text != "")
             {
                 if (chkAtivarPai.Checked && chkAtivarMae.Checked)
                 {
                     if ((txtNomePai.Text != "" && txtCPFPai.Text != "" && txtRGPai.Text != "" && txtTelefonePai.Text != "") &&
                         (txtNomeMae.Text != "" && txtCPFMae.Text != "" && txtRGMae.Text != "" && txtTelefoneMae.Text != ""))
                     {
+                        CadastroCrianca novaCrianca = new CadastroCrianca();
                         //metodo salvar após verificar se campos obrigatórios dos pais estão preenchidos
-                        if (txtNomeCrianca.Text != "")
-                        {
-                            nomeCrianca = txtNomeCrianca.Text;
-                        } else
-                        {
-                            MessageBox.Show("Digite o nome\n" +
-                                            "completo da criança!");
-                        }
-                        if (dtpNascimentoCrianca.Text != "")
-                        {
-                            dataNasc = dtpNascimentoCrianca.Text;
-                        } else
-                        {
-                            MessageBox.Show("Defina a data de\n" +
-                                            "nascimento da criança!");
-                        }                        
+                        //if (txtNomeCrianca.Text != "")
+                        //{
+                            novaCrianca.nomeCrianca = txtNomeCrianca.Text;
+                        //} else
+                        //{
+                        //    MessageBox.Show("Digite o nome completo da criança!");
+                        //}
+                        //if (dtpNascimentoCrianca.Text != "")
+                        //{
+                            novaCrianca.dataNasc = dtpNascimentoCrianca.Text;
+                        //} else
+                        //{
+                        //    MessageBox.Show("Defina a data de nascimento da criança!");
+                        //}                        
                         if (radioCriancaFem.Checked)
                         {
-                            sexo = 'F';
+                            novaCrianca.sexo = "F";
                         }
                         else if (radioCriancaMasc.Checked)
                         {
-                            sexo = 'M';
+                            novaCrianca.sexo = "M";
                         } else
                         {
-                            MessageBox.Show("Defina se a criança é do\n" +
-                                            "sexo Masculino ou Feminino!");
+                            MessageBox.Show("Defina se a criança é do sexo Masculino ou Feminino!");
                         }
                         if (comboCriancaTipoSanguineo.Text != "")
                         {
-                            tipoSanguineo = comboCriancaTipoSanguineo.Text;
+                            novaCrianca.tipoSanguineo = comboCriancaTipoSanguineo.Text;
                         }
                         else
                         {
                             //MessageBox.Show("Defina o tipo sanguíneo da criança!");
-                            tipoSanguineo = "-";
+                            novaCrianca.tipoSanguineo = "-";
                         }
-                        CadastroCrianca crianca = new CadastroCrianca();
-                        crianca.nomeMae = txtNomeMae.Text;
-                        crianca.nomePai = txtNomePai.Text;
-                        crianca.rgMae = txtRGMae.Text;
-                        crianca.rgPai = txtRGPai.Text;
-                        crianca.cpfMae = txtCPFMae.Text;
-                        crianca.cpfPai = txtCPFPai.Text;
-                        crianca.enderecoPais = txtEnderecoPais.Text;
-                        crianca.noEnderecoPais = txtNumeroCasaPais.Text;
-                        crianca.bairroPais = txtBairroPais.Text;
-                        crianca.cepPais = txtCEPPais.Text;
-                        
-                        DAOHelper.AddCrianca(nomeCrianca, dataNasc, sexo, tipoSanguineo);
-                        
-                        
+                        //CadastroCrianca crianca = new CadastroCrianca();
+                        novaCrianca.nomeMae = txtNomeMae.Text;
+                        novaCrianca.nomePai = txtNomePai.Text;
+                        novaCrianca.rgMae = txtRGMae.Text;
+                        novaCrianca.rgPai = txtRGPai.Text;
+                        novaCrianca.cpfMae = txtCPFMae.Text;
+                        novaCrianca.cpfPai = txtCPFPai.Text;
+                        novaCrianca.enderecoPais = txtEnderecoPais.Text;
+                        novaCrianca.noEnderecoPais = txtNumeroCasaPais.Text;
+                        novaCrianca.bairroPais = txtBairroPais.Text;
+                        novaCrianca.cepPais = txtCEPPais.Text;
+
+
+                        DAOHelper.AddCrianca(novaCrianca);
+                        if (MessageBox.Show("Dados da criança e dos pais cadastrados com sucesso!\n\n" +
+                                "Deseja cadastrar nova criança com os mesmos pais?","Sucesso!", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        {
+                            LimparCamposCrianca();
+                        } else
+                        {
+                            LimparCamposForm();
+                        }                        
                     } else
                     {
-                        MessageBox.Show("Verifique se algum dado referente\n" +
-                                        "aos pais da criança está incompleto!");
+                        MessageBox.Show("Verifique se algum dado referente aos pais da criança está incompleto!");
                     }
                 } else if (chkAtivarMae.Checked && !chkAtivarPai.Checked)
                 {
@@ -223,12 +259,22 @@ namespace DengoDeCrianca
 
         private void radioCriancaMasc_Click(object sender, EventArgs e)
         {
-            sexo = 'M';
+            sexo = "M";
         }
 
         private void radioCriancaFem_Click(object sender, EventArgs e)
         {
-            sexo = 'F';
+            sexo = "F";
+        }
+
+        private void radioCriancaMasc_CheckedChanged(object sender, EventArgs e)
+        {
+            sexo = "M";
+        }
+
+        private void radioCriancaFem_CheckedChanged(object sender, EventArgs e)
+        {
+            sexo = "F";
         }
     }
 }

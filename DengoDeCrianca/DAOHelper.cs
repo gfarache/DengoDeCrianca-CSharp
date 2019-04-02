@@ -133,19 +133,67 @@ namespace DengoDeCrianca
             }
         }
 
-        public static void AddCrianca(string nome, string dataNasc, char sexo, string tipoSanguineo)
+        public static int AddCrianca(CadastroCrianca crianca)
         {
             try
             {
+                //using (var cmd = DbConnection().CreateCommand())
+                //{
+                //    cmd.CommandText = "SELECT MAX(IdCrianca) FROM Crianca";
+                //    SQLiteDataAdapter da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
+                //    da.ToString();
+                //}
+
+                SQLiteConnection connect = new SQLiteConnection("Data Source=c:\\dadosDengoDeCrianca\\DengoDeCrianca.sqlite; Version=3;");
+                connect.Open();
+                SQLiteCommand cmdSelect = connect.CreateCommand();
+                cmdSelect.CommandText = @"SELECT MAX(IdCrianca) FROM Crianca";
+                cmdSelect.CommandType = CommandType.Text;
+                //cmdSelect.Connection = sqliteConnection;
+                //sqliteConnection.Open();
+                SQLiteDataReader dataReader = cmdSelect.ExecuteReader();
+                dataReader.Read();
+                int idCrianca = dataReader.GetInt32(0)+1;
+                //sqliteConnection.Close();
+                dataReader.Close();
+
+                int i = 0;
                 using (var cmd = DbConnection().CreateCommand())
                 {
+                    //https://stackoverflow.com/questions/10853301/save-and-load-image-sqlite-c-sharp
                     cmd.CommandText = "INSERT INTO Crianca(Nome, DataNascimento, Sexo, TipoSanguineo) values (@Nome, @DataNasc, @Sexo, @TipoSanguineo)";
-                    cmd.Parameters.AddWithValue("@Nome", nome);
-                    cmd.Parameters.AddWithValue("@DataNasc", dataNasc);
-                    cmd.Parameters.AddWithValue("@Sexo", sexo);
-                    cmd.Parameters.AddWithValue("@TipoSanguineo", tipoSanguineo);
+                    cmd.Parameters.AddWithValue("@Nome", crianca.nomeCrianca);
+                    cmd.Parameters.AddWithValue("@DataNasc", crianca.dataNasc);
+                    cmd.Parameters.AddWithValue("@Sexo", crianca.sexo);
+                    cmd.Parameters.AddWithValue("@TipoSanguineo", crianca.tipoSanguineo);
                     cmd.ExecuteNonQuery();
                 }
+                using (var cmd = DbConnection().CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO Pai(IdCrianca, Nome, CPF, RG, Telefone, Endereco) values (@IdCrianca, @NomePai, @CPFPai, @RGPai, @TelefonePai, @Endereco)";
+                    cmd.Parameters.AddWithValue("@IdCrianca", idCrianca);
+                    cmd.Parameters.AddWithValue("@NomePai", crianca.nomePai);
+                    cmd.Parameters.AddWithValue("@CPFPai", crianca.cpfPai);
+                    cmd.Parameters.AddWithValue("@RGPai", crianca.rgPai);
+                    cmd.Parameters.AddWithValue("@TelefonePai", crianca.telefonePai);
+                    cmd.Parameters.AddWithValue("@Endereco", crianca.enderecoPais + " - " + crianca.noEnderecoPais+ " - " + crianca.bairroPais+ " - " + crianca.cepPais);
+                    cmd.ExecuteNonQuery();
+                }
+                using (var cmd = DbConnection().CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO Mae(IdCrianca, Nome, CPF, RG, Telefone, Endereco) values (@IdCrianca, @NomeMae, @CPFMae, @RGMae, @TelefoneMae, @Endereco)";
+                    cmd.Parameters.AddWithValue("@IdCrianca", idCrianca);
+                    cmd.Parameters.AddWithValue("@NomeMae", crianca.nomeMae);
+                    cmd.Parameters.AddWithValue("@CPFMae", crianca.cpfMae);
+                    cmd.Parameters.AddWithValue("@RGMae", crianca.rgMae);
+                    cmd.Parameters.AddWithValue("@TelefoneMae", crianca.telefoneMae);
+                    cmd.Parameters.AddWithValue("@Endereco", crianca.enderecoPais + " - " + crianca.noEnderecoPais + " - " + crianca.bairroPais + " - " + crianca.cepPais);
+                    cmd.ExecuteNonQuery();
+                }
+                if (i == 3)
+                    return i;
+                else
+                    return 0;
             }
             catch (Exception ex)
             {
