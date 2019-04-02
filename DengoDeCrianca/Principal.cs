@@ -23,11 +23,5 @@ namespace DengoDeCrianca
 
             cadastro.Show();
         }
-
-        private void adicionarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            CadastroResponsável cadastro = new CadastroResponsável();
-            cadastro.Show();
-        }
     }
 }
