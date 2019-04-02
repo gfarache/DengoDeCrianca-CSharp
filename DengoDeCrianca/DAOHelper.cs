@@ -132,17 +132,17 @@ namespace DengoDeCrianca
             }
         }
 
-        public static void AddCrianca(CadastroCrianca crianca)
+        public static void AddCrianca(string nome, string dataNasc, char sexo, string tipoSanguineo)
         {
             try
             {
                 using (var cmd = DbConnection().CreateCommand())
                 {
                     cmd.CommandText = "INSERT INTO Crianca(Nome, DataNascimento, Sexo, TipoSanguineo) values (@Nome, @DataNasc, @Sexo, @TipoSanguineo)";
-                    cmd.Parameters.AddWithValue("@Nome", crianca.nomeCrianca);
-                    cmd.Parameters.AddWithValue("@DataNasc", crianca.dataNasc);
-                    cmd.Parameters.AddWithValue("@Sexo", crianca.sexo);
-                    cmd.Parameters.AddWithValue("@TipoSanguineo", crianca.tipoSanguineo);
+                    cmd.Parameters.AddWithValue("@Nome", nome);
+                    cmd.Parameters.AddWithValue("@DataNasc", dataNasc);
+                    cmd.Parameters.AddWithValue("@Sexo", sexo);
+                    cmd.Parameters.AddWithValue("@TipoSanguineo", tipoSanguineo);
                     cmd.ExecuteNonQuery();
                 }
             }

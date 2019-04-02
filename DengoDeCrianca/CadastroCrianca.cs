@@ -174,7 +174,7 @@ namespace DengoDeCrianca
                         crianca.bairroPais = txtBairroPais.Text;
                         crianca.cepPais = txtCEPPais.Text;
                         
-                        DAOHelper.AddCrianca(crianca);
+                        DAOHelper.AddCrianca(nomeCrianca, dataNasc, sexo, tipoSanguineo);
                         
                         
                     } else
