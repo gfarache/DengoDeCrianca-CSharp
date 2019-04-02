@@ -21,6 +21,8 @@ namespace DengoDeCrianca
         public static string numeroCasa = "";
         public static string bairro = "";
         public static string cep = "";
+        private OutrosContatos outros;
+
         public OutrosContatos()
         {
             InitializeComponent();
@@ -42,14 +44,23 @@ namespace DengoDeCrianca
                 parentesco != "" && endereco != "" && numeroCasa != "" && bairro != "" && cep != "")
             {
                 //método para salvar nas váriaveis do Form de cadastro da criança
+                //CadastroCrianca crianca = new CadastroCrianca();
+                //crianca.Show();
                 CadastroCrianca crianca = new CadastroCrianca();
-                crianca.Show();
-
+                crianca.nomeOutrosContatos = nomeCompleto;
+                crianca.cpfOutros = cpf;
+                crianca.rgOutros = rg;
+                crianca.telefoneOutros = telefone;
+                crianca.parentescoOutros = parentesco;
+                crianca.enderecoOutros = endereco;
+                crianca.noEnderecoOutros = numeroCasa;
+                crianca.bairroOutros = bairro;
+                crianca.cepOutros = cep;
             } else
             {
                 MessageBox.Show("Alguns dados do responsável podem estar incompletos!\n" +
                                 "Verifique novamente os dados inseridos no formulário!");
             }
-    }
+        }
     }
 }
