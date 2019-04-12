@@ -114,6 +114,7 @@ namespace DengoDeCrianca
                 using (var cmd = DbConnection().CreateCommand())
                 {
                     //https://stackoverflow.com/questions/10853301/save-and-load-image-sqlite-c-sharp
+                    //https://social.msdn.microsoft.com/Forums/ie/pt-BR/77d9951f-3f18-4177-af56-15aed0a4b931/como-salvar-imagem-em-tabela-sqlite?forum=vsvbasicpt
                     cmd.CommandText = "INSERT INTO Crianca(Nome, DataNascimento, Sexo, TipoSanguineo) values (@Nome, @DataNasc, @Sexo, @TipoSanguineo)";
                     cmd.Parameters.AddWithValue("@Nome", crianca.nomeCrianca);
                     cmd.Parameters.AddWithValue("@DataNasc", crianca.dataNasc);
