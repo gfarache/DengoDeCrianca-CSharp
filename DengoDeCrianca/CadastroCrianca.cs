@@ -20,6 +20,7 @@ namespace DengoDeCrianca
         public string dataNasc;
         public string sexo;
         public string tipoSanguineo;
+        public string fotoCrianca;
         public string nomeMae;
         public string nomePai;
         public string nomeOutrosContatos;
@@ -203,6 +204,8 @@ namespace DengoDeCrianca
                         novaCrianca.noEnderecoPais = txtNumeroCasaPais.Text;
                         novaCrianca.bairroPais = txtBairroPais.Text;
                         novaCrianca.cepPais = txtCEPPais.Text;
+                        picCriancaFoto.Image = new Bitmap(new OpenFileDialog().FileName);
+                        novaCrianca.fotoCrianca = picCriancaFoto.ImageLocation;
 
 
                         DAOHelper.AddCrianca(novaCrianca);

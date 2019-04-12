@@ -91,7 +91,9 @@
     <Compile Include="CadastroResponsável.Designer.cs">
       <DependentUpon>CadastroResponsável.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConvertImage.cs" />
     <Compile Include="DAOHelper.cs" />
+    <Compile Include="Imagem.cs" />
     <Compile Include="OutrosContatos.cs">
       <SubType>Form</SubType>
     </Compile>

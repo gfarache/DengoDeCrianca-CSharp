@@ -38,6 +38,12 @@ CREATE TABLE "Mae" (
 	"Telefone"	VARCHAR(15) NOT NULL,
 	"Endereco"	VARCHAR(100) NOT NULL
 );
+CREATE TABLE "Foto" (
+	"IdFotoCrianca"	INTEGER NOT NULL,
+	"Descricao"	TEXT NOT NULL,
+	"Foto"	TEXT,
+	PRIMARY KEY("IdFotoCrianca")
+);
 COMMIT;
  * 
  */
@@ -159,6 +165,7 @@ namespace DengoDeCrianca
                     cmd.Parameters.AddWithValue("@Sexo", crianca.sexo);
                     cmd.Parameters.AddWithValue("@TipoSanguineo", crianca.tipoSanguineo);
                     cmd.ExecuteNonQuery();
+                    i++;
                 }
                 using (var cmd = DbConnection().CreateCommand())
                 {
@@ -170,6 +177,7 @@ namespace DengoDeCrianca
                     cmd.Parameters.AddWithValue("@TelefonePai", crianca.telefonePai);
                     cmd.Parameters.AddWithValue("@Endereco", crianca.enderecoPais + " - " + crianca.noEnderecoPais+ " - " + crianca.bairroPais+ " - " + crianca.cepPais);
                     cmd.ExecuteNonQuery();
+                    i++;
                 }
                 using (var cmd = DbConnection().CreateCommand())
                 {
@@ -181,7 +189,22 @@ namespace DengoDeCrianca
                     cmd.Parameters.AddWithValue("@TelefoneMae", crianca.telefoneMae);
                     cmd.Parameters.AddWithValue("@Endereco", crianca.enderecoPais + " - " + crianca.noEnderecoPais + " - " + crianca.bairroPais + " - " + crianca.cepPais);
                     cmd.ExecuteNonQuery();
+                    i++;
                 }
+                Imagem imagem = new Imagem();
+                //imagem.Descricao = "Foto 2";
+                imagem.Descricao = crianca.nomeCrianca;
+                //imagem.Foto = ConvertImage.ImageToBase64("2.jpg");
+                imagem.Foto = ConvertImage.ImageToBase64(crianca.fotoCrianca);
+                //SQLiteConnection connection = new SQLiteConnection(@"Data Source=c:\Temp\base.db;");
+                SQLiteConnection connection = new SQLiteConnection("Data Source=c:\\dadosDengoDeCrianca\\DengoDeCrianca.sqlite; Version=3;");
+                connection.Open();
+                SQLiteCommand command = connection.CreateCommand();
+                command.CommandText = "INSERT INTO Imagem(Descricao, Foto) VALUES(@Descricao, @Foto);";
+                command.Parameters.Add("@Descricao", System.Data.DbType.String).Value = imagem.Descricao;
+                command.Parameters.Add("@Foto", System.Data.DbType.String).Value = imagem.Foto;
+                command.ExecuteNonQuery();
+                //connection.Dispose();
                 if (i == 3)
                     return i;
                 else
