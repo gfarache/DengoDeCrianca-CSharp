@@ -1,46 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SQLite;
-/*
- * 
-BEGIN TRANSACTION;
-CREATE TABLE "OutrosContatos" (
-	"IdOutroContato"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	"IdCrianca"	INTEGER NOT NULL,
-	"Nome"	VARCHAR(100) NOT NULL,
-	"CPF"	VARCHAR(15) NOT NULL,
-	"RG"	VARCHAR(20) NOT NULL,
-	"Telefone"	VARCHAR(15) NOT NULL,
-	"Parentesco"	VARCHAR(50) NOT NULL
-);
-CREATE TABLE "Pai" (
-	"IdPai"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	"IdCrianca"	INTEGER NOT NULL,
-	"CPF"	VARCHAR(15) NOT NULL,
-	"RG"	VARCHAR(20) NOT NULL,
-	"Nome"	VARCHAR(100) NOT NULL,
-	"Telefone"	VARCHAR(15) NOT NULL,
-	"Endereco"	VARCHAR(100) NOT NULL
-);
-CREATE TABLE "Crianca" (
-	"IdCrianca"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	"Nome"	VARCHAR(100) NOT NULL,
-	"DataNascimento"	DATE NOT NULL,
-	"Sexo"	VARCHAR(5) NOT NULL,
-	"TipoSanguineo"	VARCHAR(5)
-);
-CREATE TABLE "Mae" (
-	"IdMae"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	"IdCrianca"	INTEGER NOT NULL,
-	"CPF"	VARCHAR(15) NOT NULL,
-	"RG"	VARCHAR(20) NOT NULL,
-	"Nome"	VARCHAR(100) NOT NULL,
-	"Telefone"	VARCHAR(15) NOT NULL,
-	"Endereco"	VARCHAR(100) NOT NULL
-);
-COMMIT;
- * 
- */
+
 namespace DengoDeCrianca
 {
     public class DAOHelper
@@ -154,12 +115,14 @@ namespace DengoDeCrianca
                 using (var cmd = DbConnection().CreateCommand())
                 {
                     //https://stackoverflow.com/questions/10853301/save-and-load-image-sqlite-c-sharp
+                    //https://social.msdn.microsoft.com/Forums/ie/pt-BR/77d9951f-3f18-4177-af56-15aed0a4b931/como-salvar-imagem-em-tabela-sqlite?forum=vsvbasicpt
                     cmd.CommandText = "INSERT INTO Crianca(Nome, DataNascimento, Sexo, TipoSanguineo) values (@Nome, @DataNasc, @Sexo, @TipoSanguineo)";
                     cmd.Parameters.AddWithValue("@Nome", crianca.nomeCrianca);
                     cmd.Parameters.AddWithValue("@DataNasc", crianca.dataNasc);
                     cmd.Parameters.AddWithValue("@Sexo", crianca.sexo);
                     cmd.Parameters.AddWithValue("@TipoSanguineo", crianca.tipoSanguineo);
                     cmd.ExecuteNonQuery();
+                    i++;
                 }
                 using (var cmd = DbConnection().CreateCommand())
                 {
@@ -171,6 +134,7 @@ namespace DengoDeCrianca
                     cmd.Parameters.AddWithValue("@TelefonePai", crianca.telefonePai);
                     cmd.Parameters.AddWithValue("@Endereco", crianca.enderecoPais + " - " + crianca.noEnderecoPais+ " - " + crianca.bairroPais+ " - " + crianca.cepPais);
                     cmd.ExecuteNonQuery();
+                    i++;
                 }
                 using (var cmd = DbConnection().CreateCommand())
                 {
@@ -182,7 +146,22 @@ namespace DengoDeCrianca
                     cmd.Parameters.AddWithValue("@TelefoneMae", crianca.telefoneMae);
                     cmd.Parameters.AddWithValue("@Endereco", crianca.enderecoPais + " - " + crianca.noEnderecoPais + " - " + crianca.bairroPais + " - " + crianca.cepPais);
                     cmd.ExecuteNonQuery();
+                    i++;
                 }
+                Imagem imagem = new Imagem();
+                //imagem.Descricao = "Foto 2";
+                imagem.Descricao = crianca.nomeCrianca;
+                //imagem.Foto = ConvertImage.ImageToBase64("2.jpg");
+                imagem.Foto = ConvertImage.ImageToBase64(crianca.fotoCrianca);
+                //SQLiteConnection connection = new SQLiteConnection(@"Data Source=c:\Temp\base.db;");
+                SQLiteConnection connection = new SQLiteConnection("Data Source=c:\\dadosDengoDeCrianca\\DengoDeCrianca.sqlite; Version=3;");
+                connection.Open();
+                SQLiteCommand command = connection.CreateCommand();
+                command.CommandText = "INSERT INTO Imagem(Descricao, Foto) VALUES(@Descricao, @Foto);";
+                command.Parameters.Add("@Descricao", System.Data.DbType.String).Value = imagem.Descricao;
+                command.Parameters.Add("@Foto", System.Data.DbType.String).Value = imagem.Foto;
+                command.ExecuteNonQuery();
+                //connection.Dispose();
                 if (i == 3)
                     return i;
                 else
