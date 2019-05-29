@@ -1,54 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SQLite;
-/*
- * 
-BEGIN TRANSACTION;
-DROP TABLE IF EXISTS "OutrosContatos";
-CREATE TABLE IF NOT EXISTS "OutrosContatos" (
-	"IdOutroContato"	INTEGER NOT NULL,
-	"IdCrianca"	INTEGER NOT NULL,
-	"Nome"	VARCHAR(100) NOT NULL,
-	"CPF"	VARCHAR(15) NOT NULL,
-	"RG"	VARCHAR(20) NOT NULL,
-	"Telefone"	VARCHAR(15) NOT NULL,
-	"Parentesco"	VARCHAR(50) NOT NULL,
-	PRIMARY KEY("IdOutroContato","IdCrianca")
-);
-DROP TABLE IF EXISTS "Pai";
-CREATE TABLE IF NOT EXISTS "Pai" (
-	"IdPai"	INTEGER NOT NULL,
-	"IdCrianca"	INTEGER NOT NULL,
-	"CPF"	VARCHAR(15) NOT NULL,
-	"RG"	VARCHAR(20) NOT NULL,
-	"Nome"	VARCHAR(100) NOT NULL,
-	"Telefone"	VARCHAR(15) NOT NULL,
-	"Endereco"	VARCHAR(100) NOT NULL,
-	PRIMARY KEY("IdPai","IdCrianca")
-);
-DROP TABLE IF EXISTS "Crianca";
-CREATE TABLE IF NOT EXISTS "Crianca" (
-	"IdCrianca"	INTEGER NOT NULL,
-	"Nome"	VARCHAR(100) NOT NULL,
-	"DataNascimento"	DATE NOT NULL,
-	"Sexo"	VARCHAR(5) NOT NULL,
-    "TipoSanguineo" VARCHAR(5),
-	PRIMARY KEY("IdCrianca")
-);
-DROP TABLE IF EXISTS "Mae";
-CREATE TABLE IF NOT EXISTS "Mae" (
-	"IdMae"	INTEGER NOT NULL,
-	"IdCrianca"	INTEGER NOT NULL,
-	"CPF"	VARCHAR(15) NOT NULL,
-	"RG"	VARCHAR(20) NOT NULL,
-	"Nome"	VARCHAR(100) NOT NULL,
-	"Telefone"	VARCHAR(15) NOT NULL,
-	"Endereco"	VARCHAR(100) NOT NULL,
-	PRIMARY KEY("IdMae","IdCrianca")
-);
-COMMIT;
- * 
- */
+
 namespace DengoDeCrianca
 {
     public class DAOHelper
@@ -133,19 +86,86 @@ namespace DengoDeCrianca
             }
         }
 
-        public static void AddCrianca(string nome, string dataNasc, char sexo, string tipoSanguineo)
+        public static int AddCrianca(CadastroCrianca crianca)
         {
             try
             {
+                //using (var cmd = DbConnection().CreateCommand())
+                //{
+                //    cmd.CommandText = "SELECT MAX(IdCrianca) FROM Crianca";
+                //    SQLiteDataAdapter da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
+                //    da.ToString();
+                //}
+
+                SQLiteConnection connect = new SQLiteConnection("Data Source=c:\\dadosDengoDeCrianca\\DengoDeCrianca.sqlite; Version=3;");
+                connect.Open();
+                SQLiteCommand cmdSelect = connect.CreateCommand();
+                cmdSelect.CommandText = @"SELECT MAX(IdCrianca) FROM Crianca";
+                cmdSelect.CommandType = CommandType.Text;
+                //cmdSelect.Connection = sqliteConnection;
+                //sqliteConnection.Open();
+                SQLiteDataReader dataReader = cmdSelect.ExecuteReader();
+                dataReader.Read();
+                int idCrianca = dataReader.GetInt32(0)+1;
+                //sqliteConnection.Close();
+                dataReader.Close();
+                connect.Close();
+
+                int i = 0;
                 using (var cmd = DbConnection().CreateCommand())
                 {
+                    //https://stackoverflow.com/questions/10853301/save-and-load-image-sqlite-c-sharp
+                    //https://social.msdn.microsoft.com/Forums/ie/pt-BR/77d9951f-3f18-4177-af56-15aed0a4b931/como-salvar-imagem-em-tabela-sqlite?forum=vsvbasicpt
                     cmd.CommandText = "INSERT INTO Crianca(Nome, DataNascimento, Sexo, TipoSanguineo) values (@Nome, @DataNasc, @Sexo, @TipoSanguineo)";
-                    cmd.Parameters.AddWithValue("@Nome", nome);
-                    cmd.Parameters.AddWithValue("@DataNasc", dataNasc);
-                    cmd.Parameters.AddWithValue("@Sexo", sexo);
-                    cmd.Parameters.AddWithValue("@TipoSanguineo", tipoSanguineo);
+                    cmd.Parameters.AddWithValue("@Nome", crianca.nomeCrianca);
+                    cmd.Parameters.AddWithValue("@DataNasc", crianca.dataNasc);
+                    cmd.Parameters.AddWithValue("@Sexo", crianca.sexo);
+                    cmd.Parameters.AddWithValue("@TipoSanguineo", crianca.tipoSanguineo);
                     cmd.ExecuteNonQuery();
+                    i++;
                 }
+                using (var cmd = DbConnection().CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO Pai(IdCrianca, Nome, CPF, RG, Telefone, Endereco) values (@IdCrianca, @NomePai, @CPFPai, @RGPai, @TelefonePai, @Endereco)";
+                    cmd.Parameters.AddWithValue("@IdCrianca", idCrianca);
+                    cmd.Parameters.AddWithValue("@NomePai", crianca.nomePai);
+                    cmd.Parameters.AddWithValue("@CPFPai", crianca.cpfPai);
+                    cmd.Parameters.AddWithValue("@RGPai", crianca.rgPai);
+                    cmd.Parameters.AddWithValue("@TelefonePai", crianca.telefonePai);
+                    cmd.Parameters.AddWithValue("@Endereco", crianca.enderecoPais + " - " + crianca.noEnderecoPais+ " - " + crianca.bairroPais+ " - " + crianca.cepPais);
+                    cmd.ExecuteNonQuery();
+                    i++;
+                }
+                using (var cmd = DbConnection().CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO Mae(IdCrianca, Nome, CPF, RG, Telefone, Endereco) values (@IdCrianca, @NomeMae, @CPFMae, @RGMae, @TelefoneMae, @Endereco)";
+                    cmd.Parameters.AddWithValue("@IdCrianca", idCrianca);
+                    cmd.Parameters.AddWithValue("@NomeMae", crianca.nomeMae);
+                    cmd.Parameters.AddWithValue("@CPFMae", crianca.cpfMae);
+                    cmd.Parameters.AddWithValue("@RGMae", crianca.rgMae);
+                    cmd.Parameters.AddWithValue("@TelefoneMae", crianca.telefoneMae);
+                    cmd.Parameters.AddWithValue("@Endereco", crianca.enderecoPais + " - " + crianca.noEnderecoPais + " - " + crianca.bairroPais + " - " + crianca.cepPais);
+                    cmd.ExecuteNonQuery();
+                    i++;
+                }
+                Imagem imagem = new Imagem();
+                //imagem.Descricao = "Foto 2";
+                imagem.Descricao = crianca.nomeCrianca;
+                //imagem.Foto = ConvertImage.ImageToBase64("2.jpg");
+                imagem.Foto = ConvertImage.ImageToBase64(crianca.fotoCrianca);
+                //SQLiteConnection connection = new SQLiteConnection(@"Data Source=c:\Temp\base.db;");
+                SQLiteConnection connection = new SQLiteConnection("Data Source=c:\\dadosDengoDeCrianca\\DengoDeCrianca.sqlite; Version=3;");
+                connection.Open();
+                SQLiteCommand command = connection.CreateCommand();
+                command.CommandText = "INSERT INTO Imagem(Descricao, Foto) VALUES(@Descricao, @Foto);";
+                command.Parameters.Add("@Descricao", System.Data.DbType.String).Value = imagem.Descricao;
+                command.Parameters.Add("@Foto", System.Data.DbType.String).Value = imagem.Foto;
+                command.ExecuteNonQuery();
+                //connection.Dispose();
+                if (i == 3)
+                    return i;
+                else
+                    return 0;
             }
             catch (Exception ex)
             {
