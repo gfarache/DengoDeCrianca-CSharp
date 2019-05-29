@@ -148,6 +148,7 @@ namespace DengoDeCrianca
                 int idCrianca = dataReader.GetInt32(0)+1;
                 //sqliteConnection.Close();
                 dataReader.Close();
+                connect.Close();
 
                 int i = 0;
                 using (var cmd = DbConnection().CreateCommand())
